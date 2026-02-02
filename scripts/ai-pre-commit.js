@@ -3,6 +3,7 @@ import { reviewByAI } from './ai-review.client.js'
 
 async function main(){
     const diff  = getStagedDiff()
+    
     if(!diff.trim()) process.exit(0)
     
     // Diff 太大直接跳过 (防止提交卡死)
@@ -13,6 +14,8 @@ async function main(){
     console.log('🤖 AI reviewing staged changes...\n')
 
     const result = await reviewByAI(diff)
+    console.log('************result*************',result);
+    
 
     if(result.status == 'fail'){
         console.log('❌ AI Code Review Failed\n')
