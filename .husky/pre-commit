@@ -1,0 +1,14 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+# 逃生开关
+if [ "$AI_REVIEW_SKIP" = "true" ]; then
+    echo "⚠️ AI review skipped"
+    exit 0
+fi
+
+node scripts/ai-pre-commit.js
+# 支持
+# AI_REVIEW_SKIP=true git commit
+# 或
+# git commit --no-verify
