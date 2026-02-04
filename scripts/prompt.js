@@ -8,6 +8,7 @@ export function buildPrompt(diff) {
   2. 明显的逻辑 bug
   3. 明显的安全隐患
   4. 不应提交到仓库的代码（console.log / debugger / test code）
+  5. 允许console.warn 提交到代码仓库
   
   【不要】
   - 不要给重构建议
