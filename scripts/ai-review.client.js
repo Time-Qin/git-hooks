@@ -55,13 +55,13 @@ export async function reviewByAI(diff) {
     const content =
       typeof completion.choices[0].message.content == "string"
         ? completion.choices[0].message.content
-        : JSON.stringify({ status: "fail", issues: ["api error"] })
+        : JSON.stringify({ status: "fail", issues: [{ reason: "api error" }] })
     return JSON.parse(content)
   } catch (error) {
     console.warn(`错误信息：${error}`)
     console.warn(
       "请参考文档：https://help.aliyun.com/model-studio/developer-reference/error-code"
     )
-    return { status: "fail", issues: [error.message] }
+    return { status: "fail", issues: [{ reason: error.message }] }
   }
 }
