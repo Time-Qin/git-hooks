@@ -11,6 +11,9 @@ importers:
       dotenv:
         specifier: ^17.2.3
         version: 17.2.3
+      openai:
+        specifier: ^6.17.0
+        version: 6.17.0
     devDependencies:
       husky:
         specifier: ^9.1.7
@@ -27,8 +30,22 @@ packages:
     engines: {node: '>=18'}
     hasBin: true
 
+  openai@6.17.0:
+    resolution: {integrity: sha512-NHRpPEUPzAvFOAFs9+9pC6+HCw/iWsYsKCMPXH5Kw7BpMxqd8g/A07/1o7Gx2TWtCnzevVRyKMRFqyiHyAlqcA==}
+    hasBin: true
+    peerDependencies:
+      ws: ^8.18.0
+      zod: ^3.25 || ^4.0
+    peerDependenciesMeta:
+      ws:
+        optional: true
+      zod:
+        optional: true
+
 snapshots:
 
   dotenv@17.2.3: {}
 
   husky@9.1.7: {}
+
+  openai@6.17.0: {}

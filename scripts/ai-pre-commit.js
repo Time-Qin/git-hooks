@@ -14,8 +14,7 @@ async function main(){
     console.log('🤖 AI reviewing staged changes...\n')
 
     const result = await reviewByAI(diff)
-    console.log('************result*************',result);
-    
+    // console.log('************result*************',result);
 
     if(result.status == 'fail'){
         console.log('❌ AI Code Review Failed\n')
